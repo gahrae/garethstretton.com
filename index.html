@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gareth Stretton · Custom software for small & mid-sized businesses</title>
+<style>
+/* ============ DESIGN TOKENS (Ivory) ============ */
+:root{
+  --maxw:880px; --transition:.35s ease;
+  --bg:#f8f5f0; --bg-alt:#fffefb; --surface:#fffefb;
+  --text:#2b2622; --muted:#736a5f; --accent:#9b2c3a; --accent-2:#b8434f;
+  --border:#e9e1d6; --shadow:0 10px 30px rgba(90,70,50,.10);
+  --font-head:system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-body:system-ui,-apple-system,'Segoe UI',sans-serif;
+  --radius:10px; --hero-bg:linear-gradient(180deg,#fffefb,#f3ede3);
+}
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:var(--font-body); line-height:1.65; font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--font-head); line-height:1.2; font-weight:700}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 1.4rem}
+
+/* ============ TOP BAR ============ */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:color-mix(in srgb,var(--bg) 82%, transparent);
+  backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:60px}
+.brand{font-family:var(--font-head); font-weight:700; letter-spacing:.2px; font-size:1.02rem}
+.brand span{color:var(--accent)}
+.topbar .book{font-size:.9rem; font-weight:600; color:var(--accent)}
+
+/* ============ SHARED ============ */
+section{padding:3.4rem 0; border-bottom:1px solid var(--border)}
+section:nth-of-type(even){background:var(--bg-alt)}
+.kicker{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 .55rem}
+section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing:-.01em}
+.prose{max-width:660px; font-size:1.06rem}
+.prose p{margin:0 0 1.05rem}
+.prose p:last-child{margin-bottom:0}
+.prose .muted{color:var(--muted)}
+.btn{
+  display:inline-block; background:var(--accent); color:#fff;
+  padding:.85rem 1.7rem; border-radius:999px; font-weight:600; font-family:var(--font-head);
+  box-shadow:var(--shadow); transition:transform .15s ease;
+}
+.btn:hover{text-decoration:none; transform:translateY(-2px)}
+.btn.secondary{background:transparent; color:var(--accent); border:1px solid var(--accent); box-shadow:none}
+.btn.secondary:hover{background:color-mix(in srgb,var(--accent) 10%, transparent)}
+.btn-note{display:block; margin-top:.7rem; color:var(--muted); font-size:.85rem}
+.btn-row{display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center}
+
+/* ============ HERO ============ */
+.hero{background:var(--hero-bg); border-bottom:1px solid var(--border)}
+.hero .wrap{padding:4rem 1.4rem 3.4rem}
+.eyebrow{
+  display:inline-block; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--accent); font-weight:700; margin-bottom:1rem;
+  border:1px solid var(--border); border-radius:999px; padding:.3rem .85rem; background:var(--surface);
+}
+.hero h1{font-size:clamp(2rem,5.2vw,3.2rem); margin:.2rem 0 1.1rem; letter-spacing:-.02em}
+.hero .lead{font-size:clamp(1.1rem,2.2vw,1.35rem); color:var(--text); max-width:620px; margin:0 0 1.8rem}
+.hero .lead b{color:var(--accent); font-weight:700}
+
+/* trust strip */
+.trust{margin-top:2.4rem}
+.trust-label{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 .7rem}
+.logos{display:flex; flex-wrap:wrap; gap:.6rem}
+.logos span{
+  border:1px solid var(--border); background:var(--surface); color:var(--text);
+  padding:.5rem .95rem; border-radius:999px; font-size:.9rem; font-weight:600;
+}
+
+/* ============ PAIN LIST ============ */
+.painlist{list-style:none; padding:0; margin:1.3rem 0 1.2rem; display:grid; gap:.75rem; max-width:660px}
+.painlist li{position:relative; padding-left:2rem; font-size:1.05rem}
+.painlist li::before{content:"\2713"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700}
+.after-list{color:var(--muted); max-width:660px}
+
+/* ============ STEPS ============ */
+.steps{display:grid; gap:1rem; margin-top:1.5rem; grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.step{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:1.5rem; box-shadow:var(--shadow); transition:transform .18s ease, border-color var(--transition);
+}
+.step:hover{transform:translateY(-3px); border-color:var(--accent)}
+.step .num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:50%; background:var(--accent); color:#fff;
+  font-family:var(--font-head); font-weight:700; font-size:1.1rem; margin-bottom:.9rem;
+}
+.step h3{font-size:1.1rem; margin:0 0 .5rem}
+.step p{margin:0; color:var(--muted); font-size:.98rem}
+
+/* ============ ABOUT (photo) ============ */
+.about{display:flex; gap:1.5rem; align-items:center; margin-bottom:1.6rem; flex-wrap:wrap}
+.about img{
+  width:140px; height:140px; border-radius:50%; object-fit:cover;
+  border:1px solid var(--border); box-shadow:var(--shadow); flex:none;
+}
+.about p{margin:0; font-size:1.06rem; max-width:440px}
+
+/* ============ WORK ============ */
+.work{list-style:none; padding:0; margin:1.5rem 0 0; display:grid; gap:1rem}
+.work li{
+  background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent);
+  border-radius:var(--radius); padding:1.2rem 1.4rem; box-shadow:var(--shadow);
+}
+.work li b{display:block; font-family:var(--font-head); font-size:1.05rem; margin-bottom:.3rem}
+.work li p{margin:0; color:var(--muted); font-size:.98rem}
+
+/* ============ FAQ ============ */
+.faq{display:grid; gap:.6rem; margin-top:1.5rem; max-width:720px}
+.faq details{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.faq summary{
+  cursor:pointer; padding:1rem 1.2rem; font-family:var(--font-head); font-weight:600;
+  list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; color:var(--accent); font-size:1.3rem; font-weight:700; line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq .answer{padding:0 1.2rem 1.1rem; color:var(--muted); font-size:.98rem}
+
+/* ============ CONTACT ============ */
+section.contact{background:var(--hero-bg); text-align:center}
+.contact .prose{margin:0 auto 1.6rem}
+.contact-links{display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem 1rem; font-size:1rem; margin-top:1.6rem}
+.contact-links a{
+  display:inline-flex; align-items:center; background:var(--surface);
+  border:1px solid var(--border); border-radius:999px; padding:.6rem 1.15rem; color:var(--text); font-weight:600;
+}
+.contact-links a:hover{text-decoration:none; border-color:var(--accent); color:var(--accent)}
+
+footer{padding:2rem 0; text-align:center; color:var(--muted); font-size:.85rem}
+
+@media(max-width:560px){
+  body{font-size:16px}
+  .hero .wrap{padding:2.8rem 1.4rem 2.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">Gareth <span>Stretton</span></div>
+    <a class="book" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Custom software for small &amp; mid-sized businesses</span>
+    <h1>You bring the problem. I build the software that solves it.</h1>
+    <p class="lead">I'm a software engineer with an MBA and 14 years shipping production systems. I work out what's actually worth building, then I build it, so the manual work and disconnected tools slowing your business down <b>finally run themselves.</b></p>
+    <a class="btn" href="https://calendly.com/gareth-stretton/30min" target="_blank" rel="noopener">Book a call</a>
+    <span class="btn-note">Free 30 minutes. No pitch, no obligation. Based in Newmarket, NH.</span>
+    <div class="trust">
+      <p class="trust-label">Where I've built production software</p>
+      <div class="logos">
+        <span>Oracle Health</span>
+        <span>Charter Communications</span>
+        <span>CenturyLink</span>
+        <span>Centura Health</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROBLEM ============ -->
+<section id="sound-familiar">
+  <div class="wrap">
+    <p class="kicker">Sound familiar?</p>
+    <h2>The tools that got you this far are now the thing slowing you down</h2>
+    <ul class="painlist">
+      <li>Orders and requests arrive by text, email, and phone, with no single place to track them.</li>
+      <li>The same information gets typed into three different systems by hand.</li>
+      <li>Two tools that should talk to each other don't, so someone bridges the gap manually.</li>
+      <li>A critical spreadsheet that only one person really understands.</li>
+      <li>A job your team repeats every week that a computer could do in seconds.</li>
+    </ul>
+    <p class="after-list">If any of that stings, it's exactly the kind of thing I fix. And if your problem is something else entirely, bring that too.</p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2>Find the real problem, then build the fix</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>We talk it through</h3>
+        <p>You tell me what's slow, manual, or expensive. I ask questions until we get past the symptom to what's actually causing it. No jargon, no assumptions.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>I find the real fix</h3>
+        <p>Sometimes that's custom software. Sometimes it's a tool you can buy or a step worth automating. You get a straight answer on build, buy, or automate, even when the answer earns me nothing.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>I build it around how you work</h3>
+        <p>Then I build it, shaped to your actual process instead of a product you bend to fit. You end up with something that ships, works, and quietly does the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ME ============ -->
+<section id="why">
+  <div class="wrap">
+    <p class="kicker">Why work with me</p>
+    <h2>One person who understands the business and can build the software</h2>
+    <div class="about">
+      <img src="face.png" alt="Gareth Stretton" width="140" height="140">
+      <p>Hi, I'm Gareth. I was born in New Zealand and I'm now a naturalized US citizen, based on the New Hampshire Seacoast. After 14 years building software inside large companies, I'd rather put that experience to work solving real problems for real businesses.</p>
+    </div>
+    <div class="prose">
+      <p>Most software gets built by people who understand the code but not the business, or the business but not the code. Either way, you end up as the translator in the middle, and things get lost there. I do both, so that step disappears.</p>
+      <p>My experience spans companies like Oracle Health, Charter, and Centura Health, and it's paired with an MBA in strategy, product, and finance. The same engineering that holds up in a hospital or a bank works just as well for a five-person team. I don't guess at problems, either. Across healthcare, telecom, banking, and government, my job has often been to sit down with people, figure out what they actually need, and only then build it.</p>
+      <p class="muted">I'm not a dev shop that hands you a stack of tickets and vanishes after launch. I'm not a consultant who writes a report and leaves you to find someone to build it. You work directly with me from the first call to the final handover, and I'm still here when you have a question next month.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <p class="kicker">A few things I've built</p>
+    <h2>Real work, real outcomes</h2>
+    <ul class="work">
+      <li>
+        <b>Public health systems, under deadline</b>
+        <p>During COVID I built the systems a hospital network used to register the public for vaccines and screen staff for exposure. Built fast, when it mattered most, and relied on by thousands of people.</p>
+      </li>
+      <li>
+        <b>Live hospital dashboards</b>
+        <p>Replaced the manual whiteboards on hospital walls with live screens showing what's happening across the floor, minute to minute.</p>
+      </li>
+      <li>
+        <b>Document systems for banks and government</b>
+        <p>Systems that let banks, a national tax agency, and energy companies store and find huge volumes of records in seconds instead of hours.</p>
+      </li>
+      <li>
+        <b>BidWrangler, built solo from problem to prototype</b>
+        <p>A working prototype that takes the email-and-spreadsheet scramble of requesting, comparing, and approving vendor bids and puts it in one place. I found the problem by talking to people about their work, then designed and built the whole thing myself, front to back.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <p class="kicker">Before you reach out</p>
+    <h2>A few questions you might have</h2>
+    <div class="faq">
+      <details>
+        <summary>Is my business too small?</summary>
+        <div class="answer">Probably not. Small teams often get the biggest gains, because there's no IT department to lean on. A tool that hands one person back a day a week is worth building.</div>
+      </details>
+      <details>
+        <summary>What will it cost?</summary>
+        <div class="answer">It's built to be a fraction of the value it delivers, so it pays for itself. Every project gets a clear, fixed scope before any work starts, so you'll know the number up front and won't get a surprise invoice.</div>
+      </details>
+      <details>
+        <summary>I'm not technical. Is that a problem?</summary>
+        <div class="answer">Not at all. Most of the people I work with aren't. My job is to handle the technical side and explain the rest in plain language.</div>
+      </details>
+      <details>
+        <summary>What if you decide you can't help?</summary>
+        <div class="answer">I'll say so up front. I would rather point you elsewhere than sell you something that won't fix the problem.</div>
+      </details>
+      <details>
+        <summary>Where are you based, and do you work remotely?</summary>
+        <div class="answer">Newmarket, New Hampshire. I work with clients wherever they are, and I'm happy to meet in person around the Seacoast.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="kicker">Let's talk</p>
+    <h2>Start with a short conversation</h2>
+    <div class="prose">
+      <p>The best place to start is a short call about where things feel slow, manual, or expensive. Thirty minutes, no pitch. We'll talk it through and figure out whether I can help. If I can't, I'll point you to who can.</p>
+      <p class="muted">Prefer to write it down first? Email me the details and we'll take it from there.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="https://calendly.com/gareth-stretton/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+      <a class="btn secondary" href="mailto:gareth.stretton@gmail.com?subject=Let's%20talk">Email me the details</a>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:gareth.stretton@gmail.com">gareth.stretton@gmail.com</a>
+      <a href="tel:+16038339045">(603) 833-9045</a>
+      <a href="https://linkedin.com/in/gareth-stretton" target="_blank" rel="noopener">linkedin.com/in/gareth-stretton</a>
+    </div>
+  </div>
+</section>
+
+<footer>Gareth Stretton · Software Engineer &amp; MBA · Newmarket, NH</footer>
+
+</body>
+</html>

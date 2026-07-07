@@ -1,0 +1,7 @@
+# Local-only files, never committed
+local/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
