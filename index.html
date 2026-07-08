@@ -119,6 +119,15 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 .work li b{display:block; font-family:var(--font-head); font-size:1.05rem; margin-bottom:.3rem}
 .work li p{margin:0; color:var(--muted); font-size:.98rem}
 
+/* ============ TESTIMONIALS ============ */
+.quotes{list-style:none; padding:0; margin:1.5rem 0 0; display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.quotes li{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:1.5rem; box-shadow:var(--shadow); display:flex; flex-direction:column;
+}
+.quotes blockquote{margin:0 0 1rem; font-size:1.02rem; line-height:1.55}
+.quotes cite{margin-top:auto; font-style:normal; font-family:var(--font-head); font-weight:600; color:var(--accent); font-size:.95rem}
+
 /* ============ FAQ ============ */
 .faq{display:grid; gap:.6rem; margin-top:1.5rem; max-width:720px}
 .faq details{
@@ -255,6 +264,28 @@ footer{padding:2rem 0; text-align:center; color:var(--muted); font-size:.85rem}
       <li>
         <b>BidWrangler, built solo from problem to prototype</b>
         <p>A working prototype that takes the email-and-spreadsheet scramble of requesting, comparing, and approving vendor bids and puts it in one place. I found the problem by talking to people about their work, then designed and built the whole thing myself, front to back.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials">
+  <div class="wrap">
+    <p class="kicker">In their words</p>
+    <b>What people I've worked with say</b>
+    <ul class="quotes">
+      <li>
+        <blockquote>"I would recommend Gareth for anybody who is looking to build modern software with modern processes and technologies. He is probably the easiest person with whom I have ever worked."</blockquote>
+        <cite>Mike Bass</cite>
+      </li>
+      <li>
+        <blockquote>"Gareth is one of the best software engineers I have worked with."</blockquote>
+        <cite>Yu Ming Chang</cite>
+      </li>
+      <li>
+        <blockquote>"Gareth is fantastic to work with, so thorough, efficient and conscientious in delivery of his work to our clients."</blockquote>
+        <cite>Helene Kaltak</cite>
       </li>
     </ul>
   </div>
