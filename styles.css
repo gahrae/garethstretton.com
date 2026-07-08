@@ -39,6 +39,8 @@ section{padding:3.4rem 0; border-bottom:1px solid var(--border)}
 section:nth-of-type(even){background:var(--bg-alt)}
 .kicker{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 .55rem}
 section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing:-.01em}
+/* small bold heading that sits under a kicker (looks like inline bold, but is a real heading) */
+.subhead{font-size:1.06rem; margin:0; letter-spacing:normal}
 .prose{max-width:660px; font-size:1.06rem}
 .prose p{margin:0 0 1.05rem}
 .prose p:last-child{margin-bottom:0}
@@ -79,7 +81,7 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 /* ============ PAIN LIST ============ */
 .painlist{list-style:none; padding:0; margin:1.3rem 0 1.2rem; display:grid; gap:.75rem; max-width:660px}
 .painlist li{position:relative; padding-left:2rem; font-size:1.05rem}
-.painlist li::before{content:"\2713"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700}
+.painlist li::before{content:"\2022"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700}
 .after-list{color:var(--muted); max-width:660px}
 .stakes{max-width:660px; margin:0 0 1.4rem}
 .after-head{max-width:660px; margin:1.6rem 0 .4rem}
@@ -114,7 +116,7 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
   background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent);
   border-radius:var(--radius); padding:1.2rem 1.4rem; box-shadow:var(--shadow);
 }
-.work li b{display:block; font-family:var(--font-head); font-size:1.05rem; margin-bottom:.3rem}
+.work li h3{font-family:var(--font-head); font-size:1.05rem; margin:0 0 .3rem}
 .work li p{margin:0; color:var(--muted); font-size:.98rem}
 
 /* ============ TESTIMONIALS ============ */
