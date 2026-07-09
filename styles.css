@@ -1,12 +1,12 @@
-/* ============ DESIGN TOKENS (Ivory) ============ */
+/* ============ DESIGN TOKENS (Slate & Amber) ============ */
 :root{
   --maxw:880px; --transition:.35s ease;
-  --bg:#f8f5f0; --bg-alt:#fffefb; --surface:#fffefb;
-  --text:#2b2622; --muted:#736a5f; --accent:#9b2c3a;
-  --border:#e9e1d6; --shadow:0 10px 30px rgba(90,70,50,.10);
+  --bg:#ecedf0; --bg-alt:#f6f7f9; --surface:#ffffff;
+  --text:#20262e; --muted:#5f6773; --accent:#b45309;
+  --border:#dce0e5; --shadow:0 10px 30px rgba(40,45,55,.10);
   --font-head:system-ui,-apple-system,'Segoe UI',sans-serif;
   --font-body:system-ui,-apple-system,'Segoe UI',sans-serif;
-  --radius:10px; --hero-bg:linear-gradient(180deg,#fffefb,#f3ede3);
+  --radius:10px; --hero-bg:linear-gradient(180deg,#ffffff,#e6e9ee);
 }
 
 /* ============ BASE ============ */
