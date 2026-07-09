@@ -6,15 +6,15 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-600.woff2) format('woff2')}
 @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-700.woff2) format('woff2')}
 
-/* ============ DESIGN TOKENS (Slate & Amber) ============ */
+/* ============ DESIGN TOKENS (Sapphire nightfall) ============ */
 :root{
   --maxw:880px; --transition:.35s ease;
-  --bg:#ecedf0; --bg-alt:#f6f7f9; --surface:#ffffff;
-  --text:#20262e; --muted:#5f6773; --accent:#b45309;
-  --border:#dce0e5; --shadow:0 10px 30px rgba(40,45,55,.10);
+  --bg:#eef2f8; --bg-alt:#f6f9fc; --surface:#ffffff;
+  --text:#1f2740; --muted:#59617a; --accent:#0b5299;
+  --border:#d9e0ec; --shadow:0 10px 30px rgba(20,35,70,.10);
   --font-head:'Fraunces',Georgia,'Times New Roman',serif;
   --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --radius:10px; --hero-bg:linear-gradient(180deg,#ffffff,#e6e9ee);
+  --radius:10px; --hero-bg:linear-gradient(180deg,#ffffff,#e6ecf5);
 }
 
 /* ============ BASE ============ */
@@ -103,7 +103,7 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 .panel-label{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; margin:0 0 1.05rem}
 
 /* BEFORE: cool, dense, disconnected */
-.panel.before{background:#e6e9ee; position:relative; overflow:hidden}
+.panel.before{background:#e6ebf3; position:relative; overflow:hidden}
 .panel.before::before{
   content:""; position:absolute; inset:0; pointer-events:none;
   background:
@@ -113,7 +113,7 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 .panel.before .panel-label{color:var(--muted)}
 .scatter{list-style:none; margin:0; padding:0; position:relative; z-index:1; display:flex; flex-direction:column; gap:.55rem}
 .scatter li{
-  background:var(--surface); border:1px dashed #c2c8d2; border-radius:8px;
+  background:var(--surface); border:1px dashed #bcc6d6; border-radius:8px;
   padding:.55rem .72rem; font-size:.92rem; line-height:1.4; color:var(--text); max-width:90%;
 }
 .scatter li:nth-child(2){align-self:flex-end; max-width:86%}
@@ -123,11 +123,11 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 .scatter li:nth-child(6){align-self:flex-end; max-width:92%}
 
 /* AFTER: warm, aligned, one system */
-.panel.after{background:#f4efe6; border-color:#ece0cd}
+.panel.after{background:#e7eef8; border-color:#cddcee}
 .panel.after .panel-label{color:var(--accent)}
 .ordered{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.55rem}
 .ordered li{
-  background:var(--surface); border:1px solid #ece0cd; border-left:3px solid var(--accent);
+  background:var(--surface); border:1px solid #cddcee; border-left:3px solid var(--accent);
   border-radius:8px; padding:.55rem .75rem; font-size:.92rem; line-height:1.4; color:var(--text);
 }
 
@@ -205,17 +205,16 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 .faq details[open] summary::after{content:"\2212"}
 .faq .answer{padding:0 1.2rem 1.1rem; color:var(--muted); font-size:.98rem}
 
-/* ============ COOL -> WARM PAGE JOURNEY ============ */
-/* The page itself travels from cool, disconnected clutter to warm, settled order. */
-#sound-familiar{background:#e8eaef}
-#how{background:#edeeef}
-#why{background:#f0eeea}
-#work{background:#f2efe9}
-#testimonials{background:#f4f0e8}
-#faq{background:#f5f1e8}
+/* ============ SECTION BANDS (cool blue rhythm) ============ */
+#sound-familiar{background:#e9edf5}
+#how{background:#f1f5fb}
+#why{background:#eaeff8}
+#work{background:#e3ebf6}
+#testimonials{background:#f1f5fb}
+#faq{background:#e3ebf6}
 
 /* ============ CONTACT ============ */
-section.contact{background:linear-gradient(180deg,#f7f2e9,#f3ebdc); text-align:center}
+section.contact{background:linear-gradient(180deg,#e9eff8,#dce6f4); text-align:center}
 .contact .prose{margin:0 auto 1.6rem}
 .contact-links{display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem 1rem; font-size:1rem; margin-top:1.6rem}
 .contact-links a{
