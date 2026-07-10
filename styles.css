@@ -38,8 +38,12 @@ a:hover{text-decoration:underline}
   border-bottom:1px solid var(--border);
 }
 .topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:60px}
-.brand{font-family:var(--font-head); font-weight:600; letter-spacing:.2px; font-size:1.05rem}
+.brand{display:inline-flex; align-items:center; gap:.55rem; font-family:var(--font-head); font-weight:600; letter-spacing:.2px; font-size:1.05rem}
 .brand span{color:var(--accent)}
+.brand .role{
+  font-family:var(--font-body); font-weight:500; font-size:.8rem; color:var(--muted);
+  letter-spacing:0; padding-left:.6rem; border-left:1px solid var(--border);
+}
 .topbar .book{font-size:.9rem; font-weight:600; color:var(--accent)}
 
 /* ============ SHARED ============ */
@@ -163,6 +167,13 @@ section h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin:0 0 1rem; letter-spacing
 .step h3{font-size:1.1rem; margin:0 0 .5rem}
 .step p{margin:0; color:var(--muted); font-size:.98rem}
 
+/* On touch devices the :hover lift sticks as a finger passes over a card while
+   scrolling, making cards jump. Only apply the lift where hover is real. */
+@media(hover:none){
+  .step:hover{transform:none}
+  .btn:hover{transform:none}
+}
+
 /* ============ ABOUT (photo) ============ */
 .about{display:flex; gap:1.5rem; align-items:center; margin-bottom:1.6rem; flex-wrap:wrap}
 .about img{
@@ -228,4 +239,5 @@ footer{padding:2rem 0; text-align:center; color:var(--muted); font-size:.85rem}
 @media(max-width:560px){
   body{font-size:16px}
   .hero .wrap{padding:2.8rem 1.4rem 2.4rem}
+  .brand .role{display:none}
 }
